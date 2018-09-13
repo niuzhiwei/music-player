@@ -1,0 +1,102 @@
+* {
+    margin:0;
+    padding: 0;
+}
+body {
+    height: 100vh;
+}
+.cover {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536766784101&di=e1f24e3c166cbec192ee1636ab2cbf5e&imgtype=0&src=http%3A%2F%2Fpic7.photophoto.cn%2F20080516%2F0035035785497868_b.jpg) center center repeat;
+    background-size: cover;
+    filter: blur(5px);
+}
+.musicbox {
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    font-family: cursive;
+    font-size: 16px;
+    color:blcak;
+    width: 340px;
+}
+.music-panel{
+    border: 1px solid #76dba3;
+    padding: 20px 20px 5px 20px;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1), 0px 2px 10px 0px rgba(0, 0, 0, 0.05);
+    background-color: rgba(255,255,255,0.9);
+}
+
+.musicbox .control{
+    float: left;
+    margin-top: 20px;
+    font-size: 22px;
+    color: black;
+}
+.musicbox .control .fa{
+    margin-right: 12px;
+    cursor: pointer;
+}
+.musicbox .control .fa.disable{
+    opacity: 0.3;
+}
+.musicbox .info{
+    margin-left: 120px;
+}
+.musicbox .info .title{
+    font-size: 18px;
+}
+.musicbox .info .auther{
+    font-size: 13px;
+}
+.musicbox .progress{
+    width: 260px;
+}
+
+.musicbox .progress .bar{
+    height: 3px;
+    margin-top: 5px;
+    background-color:rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.musicbox .progress .progress-now{
+    background-color:#99CCFF;
+    height: 3px;
+    width:0px;
+    position: relative;
+}
+.musicbox .time{
+    text-align: right;
+}
+.musicbox:after,
+.musicbox .music:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.musicbox .list>li{
+    position: relative;
+    padding: 4px 10px;
+    border: 1px solid rgba(255,255,255,0.8);
+    border-top: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+.musicbox .list>li:hover{
+    background-color: rgba(255,255,255,0.5);
+}
+.musicbox .list>li.playing:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 30px;
+    background: rgba(255,255,255,0.8)
+}
