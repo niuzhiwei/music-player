@@ -61,9 +61,17 @@ function getMusicList(callback){
 
 getMusicList(function(list){
     musicList = list
-    loadMusic(list[currentIndex])
+    loadMusic(musicList[currentIndex])
     generateList(musicList)
  })
+
+ function loadMusic(musicObj){
+    $('.musicbox .title').innerText = musicObj.title
+    $('.musicbox .auther').innerText = musicObj.auther
+    $('.cover').style.backgroundImage = 'url('+musicObj.img +')'
+    audio.src = musicObj.src
+}
+
 
  function generateList(musicList){
      musicList.forEach(function(musicObj){
@@ -87,12 +95,6 @@ getMusicList(function(list){
  }
 
 
-function loadMusic(musicObj){
-    $('.musicbox .title').innerText = musicObj.title
-    $('.musicbox .auther').innerText = musicObj.auther
-    $('.cover').style.backgroundImage = 'url('+musicObj.img +')'
-     audio.src = musicObj.src
-}
 
 $('.musicbox .play').onclick =function(){
     if(audio.paused){
